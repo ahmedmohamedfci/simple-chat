@@ -11,6 +11,14 @@ Meteor.methods({
         check(avatar, Match.Maybe(String));
         check(name, Match.Maybe(String));
         check(custom, Match.Any );
+		if(!username)
+		{
+			username = Meteor.user().emails[0].address;
+		}
+		if(!name)
+		{
+			name = Meteor.user().emails[0].address;
+		}
 
         this.unblock()
         if (!SimpleChat.options.allow.call(this, message, roomId, username, avatar, name))
