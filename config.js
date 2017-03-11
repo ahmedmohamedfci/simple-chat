@@ -24,7 +24,7 @@ export const SimpleChat = {
             return true
         },
         onNewMessage: function (msg) {
-            console.log(msg)
+            //console.log(msg)
         },
         onReceiveMessage: function () {
 

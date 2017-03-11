@@ -1,2 +1,6 @@
 .build*
 .idea
+node_modules/
+.npm/
+Windows PowerShell.lnk
+.versions
