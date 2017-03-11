@@ -33,28 +33,19 @@ Template.SimpleChatWindow.onCreated(function () {
     else
         this.getRoomId = this.data.roomId
 
-		this.getUsername = function()
-		{	
-			try
-			{
-				return Meteor.user().profile.name;
-			}
-			catch(e)
-			{
-				try
-				{
-					return Meteor.user().emails[0].address;
-				}
-				catch(ex)
-				{
-					return Meteor.userId();
-				}
-			}
-		}
-		this.getName = this.getUsername;
-	
+    if (typeof this.data.username != "function")
+        this.getUsername = ()=> {
+            return this.data.username + ""
+        }
+    else
+        this.getUsername = this.data.username
 
-    
+    if (typeof this.data.name != "function")
+        this.getName = ()=> {
+            return this.data.name || this.getUsername()
+        }
+    else
+        this.getName = this.data.name
     if (typeof this.data.avatar != "function")
         this.getAvatar = ()=> {
             return this.data.avatar

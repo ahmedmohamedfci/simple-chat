@@ -21,3 +21,4 @@ Meteor.publish("simpleChats", function (roomId, limit) {
         options.limit = limit
     return Chats.find(query, options);
 });
+

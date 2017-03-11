@@ -1,4 +1,4 @@
-export const Chats = new Meteor.Collection("simpleChats")
+export const  Chats = new Meteor.Collection("simpleChats")
 export const Rooms = new Meteor.Collection("simpleRooms")
 
 Chats.deny({
@@ -37,12 +37,12 @@ Rooms.deny({
 });
 Chats.allow({
     insert() {
-        return true;
+        return false;
     },
     update() {
-        return true;
+        return false;
     },
     remove() {
-        return true;
+        return false;
     },
 });

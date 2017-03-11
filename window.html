@@ -1,9 +1,13 @@
 <template name="SimpleChatWindow">
+
+
     <div class="box-body chat-scroll">
+
         <!-- Conversations are loaded here -->
         <div class="direct-chat-messages">
             <div class="scroll-height">
                 {{#unless Template.subscriptionsReady}}
+
                     <div class="" style="height: 34px; width: 64px; margin: auto">
                         {{>spinner}}
                     </div>
